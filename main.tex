@@ -1,0 +1,32 @@
+%Nicht anfassen, so ist der Dokumentenaufbau
+\documentclass[a4paper, 12pt]{article}
+\input{settings/packages}
+\input{settings/page}
+\begin{document}
+\input{settings/titlepage}
+\setcounter{page}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%Ab hier Inhalt einfügen%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Einleitung} \label{einleitung}
+
+Text der Einleitung
+
+\section{Hauptteil}
+
+Text des Hauptteils
+
+\subsection{Unterüberschrift 1}
+
+weitere Kapitel
+
+\section{Schluss}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%Ende des Dokuments%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\input{settings/endofdocument}
+\end{document}
