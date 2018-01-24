@@ -11,11 +11,11 @@ Latex Vorlage für Hausarbeiten. Angepasst auf die Vorgaben des Fachbereich 08 a
 
 * Bei Bedarf für einen Anhang das Kommentarzeichen (%) in Zeile 8 von settings/endocument.tex entfernen und appendix.tex für den Anhang verwenden.
 
-* Nützliche Befehle:
-  * \enquote{} für im Deutschen übliche Anführungszeichen verwenden. Für Anführungszeichen in Zitaten \enquote*{} benutzen.
+## Nützliche Befehle
+* \enquote{} für im Deutschen übliche Anführungszeichen verwenden. Für Anführungszeichen in Zitaten \enquote*{} benutzen.
   
   
-  * Zitation:
+* Zitation:
   * (Autor, Jahr): \parencite{}
   * (Autor, Jahr, S. 123): \parencite\[123\]{} BZW (Autor, Jahr, S. 123 f.): \parencite\[123\psq\]{} BZW für ff. \psqq
   * Autor (Jahr): \textcite{}
