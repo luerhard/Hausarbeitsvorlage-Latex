@@ -2,9 +2,11 @@
 \fancyhf{}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0pt}
+
 %Special cells with linebreaks possible
 \newcommand{\specialcell}[2][c]{%
 	\begin{tabular}[#1]{@{}t@{}}#2\end{tabular}}
+    
 %define blockquote-quotation environment
 \renewenvironment{quotation}{
 	\leftskip1cm
@@ -36,9 +38,7 @@
 		"29={300, } % right bracket, add space from left
 	}
 
-%%%%%
-
-
+%%%% Zeilenhöhe auf Microsoft Word anpassen.
 \makeatletter
 \newcommand{\MSonehalfspacing}{%
   \setstretch{1.44}%  default
@@ -71,3 +71,43 @@
   \fi
 }
 \makeatother
+
+%Acronyms
+\newcommand*{\glossfirstformat}[1]{\textit{#1}}
+
+\newacronymstyle{italic-on-first}
+{%
+  \GlsUseAcrEntryDispStyle{long-short}%
+}%
+{%
+  \GlsUseAcrStyleDefs{long-short}%
+  \renewcommand*{\genacrfullformat}[1]{%
+   \glossfirstformat{\glsentrylong{##1}}\space
+   (\glsentryshort{##1})%
+  }%
+  \renewcommand*{\Genacrfullformat}[2]{%
+   \glossfirstformat{\Glsentrylong{##1}}\space
+   (\glsentryshort{##1})%
+  }%
+  \renewcommand*{\genplacrfullformat}[2]{%
+   \glossfirstformat{\glsentrylongpl{##1}}\space
+   (\glsentryshortpl{##1})%
+  }%
+  \renewcommand*{\Genplacrfullformat}[2]{%
+   \glossfirstformat{\Glsentrylongpl{##1}}\space
+   (\glsentryshortpl{##1})%
+  }%
+}
+
+\VerbatimFootnotes % von fancyvrb, erlaubt Syntax \footnote{\verb+verbatim+}
+
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}

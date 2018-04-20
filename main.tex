@@ -1,9 +1,13 @@
 %Nicht anfassen, so ist der Dokumentenaufbau
 \documentclass[a4paper, 12pt]{article}
+\usepackage{float}
 \input{settings/packages}
+\input{acronyms}
+\glsaddall
 \input{settings/page}
 \begin{document}
 \input{settings/titlepage}
+
 \setcounter{page}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%Ab hier Inhalt einfügen%%%
@@ -17,12 +21,38 @@ Text der Einleitung
 
 Text des Hauptteils
 
+\begin{figure}[htb]
+\def\svgwidth{0.5\textwidth}
+\fontsize{11}{8}\selectfont
+\input{images/beispiel.eps_tex}
+\end{figure}
+
+.svg Dateien können mit dem freien Programm Inkscape in eps + eps\_tex umgewandelt werden. Speichern unter .eps -> 
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/screenshot.jpg}
+\caption{Mit diesen Einstellungen eps abspeichern}
+\end{figure}
+
+Gefährlich ist hier: Wenn die Vektorgraphiken nicht im Hauptverzeichnis abgelegt werden, muss der Pfad in Zeile 56 in der jeweiligen .eps\_tex - Datei angepasst werden.
+
+Aus
+
+\lstinline|\put(0,0){\includegraphics[width=\unitlength]{beispiel.eps}}%|
+
+muss
+
+\lstinline|\put(0,0){\includegraphics[width=\unitlength]{images/beispiel.eps}}%|
+
 \subsection{Unterüberschrift 1}
 
-Hier wird der Artikel von \textcite{Abadi.2016} zitiert
+Hier wird der Artikel von \textcite{Abadi.2016} zitiert \parencite{Abadi.2016}. Dabei kann man auch ein tolles \gls{acr} verwenden.
+
+Der Anhang kann ich settings/endofdocument aktiviert werden.
 
 \section{Schluss}
 
+Das Abstract und alle Verzeichnisse zu Beginn des Dokuments werden am Ende von settings/titlepage verwaltet.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%Ende des Dokuments%%%%%

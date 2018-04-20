@@ -8,7 +8,7 @@
 \textsc{\huge Universität Bremen}\\[2.0cm]
 \textsc{\Large Fachbereich 08 - Soziologie}\\[0.8cm]
 \MSonehalfspacing
-\textsc{\Large Hausarbeit}\\[1.0cm]
+\textsc{\Large Hausarbeit/Typ}\\[1.0cm]
 
 \HRule\\[1.4cm]
 \MSdoublespacing
@@ -34,14 +34,58 @@
 \flushright \emph{Abgabedatum:} \today
 \end{titlepage}
 \restoregeometry
+\pagenumbering{roman}
+\pagestyle{empty}
+\newpage
 
-\setstretch{3} % Zeilenabstand im Literaturverzeichnis hier anpassen
+% Hier kommt das Abstract hin.
+\MSonehalfspacing
+\hspace{0pt}
+\vfill
+\begin{center}
+\section*{Abstract}
+\end{center} 
+\input{abstract}
+\vfill
+\hspace{0pt}
+\newpage
+% Abstract Ende
+
+% Für das Inhaltsverzeichnis
+\setstretch{1.7} % Abstand für Einträge festlegen.
 \microtypesetup{protrusion=false}
 \tableofcontents
+\thispagestyle{fancy}
 \microtypesetup{protrusion=true}
-\thispagestyle{empty}
+\newpage
+\pagestyle{fancy}
+
+% Inhaltsverzeichnis Ende
+
+% Reihenfolge für weitere Verzeichnisse hier:
+% Abbildungs- und Tabellenverzeichnis
+% Abkürzungsverzeichnis
+
+% Tabellen- & Abbildungsverzeichnis
+\listoftables
+\listoffigures
+\thispagestyle{fancy}
+
+% Tabellen- & Abbildungsverzeichnis Ende
+
+\newpage
+
+% Für das Abkürzungsverzeichnis
+\MSonehalfspacing
+\setacronymstyle{italic-on-first}
+%\addcontentsline{toc}{section}{Akronyme}
+\printnoidxglossary[type={acronym}]
+\newpage
+% Abkürzungsverzeichnis Ende
+
+
 
 \MSonehalfspacing
-\newpage
 \setcounter{page}{1}
+\pagenumbering{arabic}
 \pagestyle{fancy}

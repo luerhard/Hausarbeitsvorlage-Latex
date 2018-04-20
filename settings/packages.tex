@@ -1,14 +1,16 @@
-\usepackage[utf8]{inputenc} % Kodierung
 \usepackage[T1]{fontenc} % Explizite Nennung des Fonts
+\usepackage[utf8]{inputenc} % Kodierung
+\usepackage{textcomp}
 \usepackage[ngerman]{babel} % Sprache
-\usepackage{graphicx} % immer benötigt für das Einbinden von Graphiken
+\usepackage{graphicx} % immer benötigt für das Einbinden von Graphiken // hier egtl nicht mehr, wenn ledigilich eps.Dateien eingebunden werden...
 \usepackage{blindtext} % Wenn man das Layout prüfen will, kann hier mit \blindtext Text eingfügt werden.
 \usepackage{parskip} % Für den Abstand zwischen 2 Absätzen.
 \setlength{\parskip}{12pt plus80pt minus10pt} % Genaue Einstellung von parskip
 \usepackage{easy-todo} % Mit \todo{} Todos einfügen
 \usepackage{csquotes} % Für ordentlichen Anführungszeichen
 \usepackage[iso, german]{isodate} % Für eine deutsche Formatierung des Abgabedatums / Eidesstattlicher Erkärung
-\usepackage[style=apa, backend=biber, sortlocale=de_DE]{biblatex} % Biber backend für Literaturverzeichnis
+\usepackage[style=apa, backend=biber, sortlocale=de_DE]{biblatex}
+% Biber backend für Literaturverzeichnis
 \addbibresource{literatur/bibliography.bib} % Einbinden der Literatur.
 \DeclareLanguageMapping{german}{german-apa} % Anpassen Spracheinstellungen im Literaturverzeichnis.
 \usepackage[activate={true,nocompatibility},
@@ -20,13 +22,23 @@
 	factor=1050,
 	stretch=25,
 	shrink=10]{microtype} % Für die Feineinstellung der Zeichensetzung.
-\usepackage{booktabs}
-\usepackage{appendix}
+\usepackage{booktabs} % Für Tabellen (toprule/midrule/bottomrule)
+\usepackage{appendix} % Für den Anhang
 \usepackage[rflt]{floatflt}
-\usepackage{fancyvrb}
+\usepackage{fancyvrb} % Für Styling
 \usepackage[hidelinks]{hyperref} % Klickbare aber nicht markierte Links im PDF
 \usepackage{setspace}
+\usepackage[section]{placeins} %zwinge Tabellen und Abbildungen in das zugehörige Kapitel
 \usepackage{fancyhdr} % Für schönere Kopf-/Fußzeilen und Fußnoten.
 \usepackage[right=4 cm, left=2.5 cm, top=2.5 cm, bottom=3 cm]{geometry} % Seitenränder
-\usepackage{pbox}
-\usepackage{tabulary}
+\usepackage{pbox} % paragraphbox für multiline Tabellenzellen
+\usepackage{tabulary} % Für Tabellen mit fixer Breite
+\usepackage[nopostdot, nonumberlist, acronyms]{glossaries} % Für das Abkürzungsverzeichnis
+\usepackage{listings} %Für das Einbinden von Code-Snippets im Anhang
+\usepackage{float} % nötig für \restylefloat{table}
+\restylefloat{table} % Für Tabellen an der exakten Position, wenn H als loc-param gegeben
+\usepackage{longtable} %Für mehrseitige Tabelle
+
+\makenoidxglossaries % Abkürzungsverzeichnis kompilieren
+\renewcommand*{\glsnamefont}[1]{\textmd{#1}} % Abkürzungen weniger fett darstellen
+
